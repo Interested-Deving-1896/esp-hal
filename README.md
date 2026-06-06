@@ -1,96 +1,75 @@
-<p align="center">
-  <img src="./resources/esp-rs.svg" alt="esp-rs logo" width="100px" />
-</p>
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# esp-hal
 
-<h1 align="center">esp-hal</h1>
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/esp-hal)
 
-<p align="center">
-  <img src="https://img.shields.io/github/actions/workflow/status/esp-rs/esp-hal/ci.yml?labelColor=1C2C2E&label=CI&logo=github&style=flat-square" alt="GitHub Actions Workflow Status" />
-  <img src="https://img.shields.io/github/actions/workflow/status/esp-rs/esp-hal/hil.yml?labelColor=1C2C2E&label=HIL&logo=github&style=flat-square&event=merge_group" alt="GitHub Actions Workflow Status" />
-  <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-blue?labelColor=1C2C2E&style=flat-square" alt="MIT/Apache-2.0 licensed" />
-  <a href="https://matrix.to/#/#esp-rs:matrix.org">
-    <img src="https://img.shields.io/matrix/esp-rs:matrix.org?labelColor=1C2C2E&label=join%20matrix&color=BEC5C9&logo=matrix&style=flat-square" alt="Matrix" />
-  </a>
-</p>
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-Bare-metal (`no_std`) hardware abstraction layer for Espressif devices. Currently supports the following devices:
+## Architecture
 
-- ESP32 Series: _ESP32_
-- ESP32-C Series: _ESP32-C2, ESP32-C3, ESP32-C6_
-- ESP32-H Series: _ESP32-H2_
-- ESP32-S Series: _ESP32-S2, ESP32-S3_
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-Additionally provides support for programming the low-power RISC-V cores found on the _ESP32-C6_, _ESP32-S2_, and _ESP32-S3_ via the [esp-lp-hal] package.
+## Install
 
-For additional information regarding any of the crates in this repository, please refer to the relevant crate's `README.md` file. If you have any questions, comments, or concerns, please [open an issue], or join us on [Matrix].
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-If you are currently using (or considering using) `esp-hal` in a production environment and have any feedback or require support, please feel free to contact us at <rust.support@espressif.com>.
+```bash
+git clone https://github.com/Interested-Deving-1896/esp-hal.git
+cd esp-hal
+```
 
-> [!NOTE]
->
-> This repository includes crates that are at various stages of maturity and stability. While many functionalities have already been implemented and are usable for most tasks, certain advanced or less common features may still be under development. Each crate may offer different levels of functionality and guarantees.
+## Usage
 
-[esp-lp-hal]: https://github.com/esp-rs/esp-hal/tree/main/esp-lp-hal
-[esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
-[open an issue]: https://github.com/esp-rs/esp-hal/issues/new
-[matrix]: https://matrix.to/#/#esp-rs:matrix.org
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-## Getting Started
+## Configuration
 
-For information relating to the development of Rust applications on ESP devices, please first read [The Rust on ESP Book].
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-For information about the HAL and how to use it in your own projects, please refer to the [documentation].
+## CI
 
-When browsing the examples, we recommend viewing the tag for the `esp-hal` release you are using to ensure compatibility, e.g. [esp-hal-v1.0.0], as the `main` branch is used for development and APIs may have changed in the meantime.
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-[The Rust on ESP Book]: https://docs.espressif.com/projects/rust/book/
-[documentation]: https://docs.espressif.com/projects/rust/
-[esp-hal-v1.0.0]: https://github.com/esp-rs/esp-hal/tree/esp-hal-v1.0.0/examples
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/esp-hal`](https://github.com/Interested-Deving-1896/esp-hal) and mirrored through:
+
+```
+Interested-Deving-1896/esp-hal  ──►  OpenOS-Project-OSP/esp-hal  ──►  OpenOS-Project-Ecosystem-OOC/esp-hal
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
 
 ## Resources
 
-- [The Rust Programming Language](https://doc.rust-lang.org/book/)
-- [The Embedded Rust Book](https://docs.rust-embedded.org/book/index.html)
-- [The Embedonomicon](https://docs.rust-embedded.org/embedonomicon/)
-- [The Rust on ESP Book](https://docs.espressif.com/projects/rust/esp-hal/latest/)
-- [Embedded Rust (no_std) on Espressif](https://docs.espressif.com/projects/rust/no_std-training/)
-
-## Support policy
-
-All active development will occur on `main`.
-
-We will only backport fixes to the _latest_ minor release in a major version. For example, this means we will apply patches (bug fixes) to `1.1.x` until `1.2.0` is released, at which point all patches are only backported to the `1.2.x` series of releases.
-
-If you are a user of `unstable` APIs, we will never push breaking changes in a patch release. However, `unstable` changes _will_ make their way into minor releases. This means that as an `unstable` user updating from `1.1.x` to `1.2.x` _may_ introduce breaking changes. If you depend on `unstable`, we recommend defining your esp-hal dependency as follows:
-
-```toml
-esp-hal = { version = "~1.1" }
-```
-
-Using the [`~` operator](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#tilde-requirements) will prevent cargo auto updating to minor versions, allowing you to use `cargo update` without the possibility of breaking your project.
-
-## AI Contribution Policy
-
-We follow the same policy as the official Rust Embedded working group, please review [the policy](https://github.com/rust-embedded/wg/blob/HEAD/CODE_OF_CONDUCT.md#ai-tool-use-policy) before contributing with AI tools.
-
-## Contributing
-
-We have a number of living documents to aid contributing to the project, please give these a read before modifying code:
-
-- [DEVELOPER-GUIDELINES](https://github.com/esp-rs/esp-hal/blob/main/documentation/DEVELOPER-GUIDELINES.md)
-- [CONTRIBUTING-GUIDE](https://github.com/esp-rs/esp-hal/blob/main/documentation/CONTRIBUTING.md)
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-All packages within this repository are licensed under either of:
-
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-### Contribution notice
-
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in
-the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without
-any additional terms or conditions.
+<!-- AI:start:license -->
+[Apache-2.0](https://github.com/Interested-Deving-1896/esp-hal/blob/main/LICENSE-APACHE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
